@@ -1,0 +1,37 @@
+@import models.Multiplexmodels
+@(multiplexmodelsList : List[Multiplexmodels])(implicit request: Http.Request, messages: play.i18n.Messages)
+
+<html>
+<head>
+    <title> Showing one of the Multiplex </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .rectangle {
+     height: 50px;
+     width: 100px;
+     background-color: steelblue;
+    }
+    </style>
+</head>
+
+<body>
+    <h1> Multiplex Info </h1>
+
+    @for(multiplex <- multiplexmodelsList){
+    <p><a href = @routes.MultiplexController.edit(multiplex.multiplex_id)>edit multiplex</a> "     "
+        <a href = @routes.MultiplexController.delete(multiplex.multiplex_id)>Delete multiplex</a> </p>
+
+    <p> id       = @multiplex.multiplex_id </p>
+    <p> Name    = @multiplex.Multiplexname </p>
+    <p> Address = @multiplex.address </p>
+    <p> Number of screens = @multiplex.num_of_screens</p>
+
+    <p>------------------------------------------------------------------------------------------------------------------</p>
+
+    <h2>Screens </h2>
+    @for(i <- 1 to multiplex.num_of_screens){
+        <div class="rectangle"><a href=@routes.MultiplexController.alotmovie(multiplex.multiplex_id,multiplex.Multiplexname, i)> Screen @i<br> Allot movie</a></div>
+    }
+    }
+</body>
+</html>

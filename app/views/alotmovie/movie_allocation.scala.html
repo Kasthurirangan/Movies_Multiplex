@@ -1,0 +1,43 @@
+@(moviesmodelList : List[Moviesmodels], multiplex_id : Integer, id : Integer, name : String, movie_timing : List[String])(implicit request: Http.Request, messages: play.i18n.Messages)
+
+<html>
+<head>
+    <title> Allocation movie </title>
+</head>
+
+<body>
+<h2>Allocation of screen for list of movies</h2>
+<table width="100%" border="1">
+    <thead>
+    <th>MULTIPLEX NAME</th>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>CATEGORY</th>
+    <th>PRODUCER</th>
+    <th>DIRECTOR</th>
+    <th>DATE</th>
+    <th>SCREEN NUMBER</th>
+    <th>MOVIE TIMING</th>
+    </thead>
+    <tbody>
+    @for(movie <- moviesmodelList) {
+    <tr>
+        <td>@name</td>
+        <td>@movie.id</td>
+        <td>@movie.name</td>
+        <td>@movie.category</td>
+        <td>@movie.producer</td>
+        <td>@movie.Director</td>
+        <td>@movie.date</td>
+        <td>@id</td>
+        <td>
+        @for(timing <- movie_timing){
+            <p>  <a href = @routes.MultiplexController.allocate_success_or_not(multiplex_id,id,movie.id, timing)>@timing</a>   </p>
+        }
+        </td>
+    </tr>
+    }
+    </tbody>
+</table>
+</body>
+</html>

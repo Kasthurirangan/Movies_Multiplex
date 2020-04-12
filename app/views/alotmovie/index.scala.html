@@ -1,0 +1,34 @@
+@(alotmoviemodelList : List[Alotmoviemodel])
+
+<html>
+<head>
+    <title> Allocation movie info </title>
+</head>
+
+<body>
+
+<h2>Allocation movies Catalogue</h2>
+<table width="100%" border="1">
+    <thead>
+    <th>Movie Allocation id</th>
+    <th>Movie id</th>
+    <th>Multiplex id</th>
+    <th>Screen Number</th>
+    <th>Time range</th>
+    <th>Aloted or not</th>
+    </thead>
+    <tbody>
+    @for(alloc_movie <- alotmoviemodelList) {
+    <tr>
+        <td>@alloc_movie.movieallocation_id</td>
+        <td>@alloc_movie.movie_id</a></td>
+        <td>@alloc_movie.mutiplex_id</td>
+        <td>@alloc_movie.screen_no</td>
+        <td>@alloc_movie.timerange</td>
+        <td>@alloc_movie.aloted_or_not</td>
+    </tr>
+    }
+    </tbody>
+</table>
+</body>
+</html>

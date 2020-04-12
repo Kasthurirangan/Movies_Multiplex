@@ -1,0 +1,31 @@
+@(multiplexmodelsList : List[Multiplexmodels])
+
+<html>
+<head>
+    <title> Multiplex info </title>
+</head>
+
+<body>
+<h4><a href="@routes.MultiplexController.create()">Add New Multiplex</a></h4>
+
+<h2>Multiplex in Catalogue</h2>
+<table width="100%" border="1">
+    <thead>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>ADDRESS</th>
+    <th>NUMBER_OF_SCREENS</th>
+    </thead>
+    <tbody>
+    @for(multiplex <- multiplexmodelsList) {
+    <tr>
+        <td>@multiplex.multiplex_id</td>
+        <td><a href = @routes.MultiplexController.show(multiplex.multiplex_id)>@multiplex.Multiplexname</a></td>
+        <td>@multiplex.address</td>
+        <td>@multiplex.num_of_screens</td>
+    </tr>
+    }
+    </tbody>
+</table>
+</body>
+</html>

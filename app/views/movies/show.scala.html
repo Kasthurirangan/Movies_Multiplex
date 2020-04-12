@@ -1,0 +1,24 @@
+@import models.Moviesmodels
+@(moviesmodels : List[Moviesmodels])(implicit request: Http.Request, messages: play.i18n.Messages)
+
+<html>
+<head>
+    <title> Showing one of the Movie </title>
+</head>
+
+<body>
+    <h1> Movie Info </h1>
+    @for(movie <- moviesmodels){
+        <p> id       = @movie.id </p>
+        <p> title    = @movie.name </p>
+        <p> category = @movie.category </p>
+        <p> Producer = @movie.producer</p>
+        <p> Director = @movie.Director</p>
+        <p> Date     = @movie.date</p>
+
+        <a href = @routes.MoviesController.edit(movie.id)>edit movie</a>
+        <a href = @routes.MoviesController.delete(movie.id)>Delete movie</a>
+        <button onclick="window.location.href = @routes.MoviesController.edit(movie.id);">Edit</button>
+    }
+</body>
+</html>

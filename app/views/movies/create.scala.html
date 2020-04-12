@@ -1,0 +1,26 @@
+@(moviesmodelForm : Form[Moviesmodels])(implicit request: Http.Request, messages: play.i18n.Messages)
+@import helper._
+
+<html>
+    <head>
+        <title> Movie Info  </title>
+    </head>
+
+    <body>
+
+    @helper.form(action = routes.MoviesController.save()) {
+
+    <fieldset>
+        <legend>Movies</legend>
+        @helper.CSRF.formField
+        @helper.inputText(moviesmodelForm("name"), Symbol("_label") -> "Enter movie Name", Symbol("placeholder") -> "Enter movie name")
+        @helper.inputText(moviesmodelForm("category"), Symbol("_label") -> "Enter movie Category")
+        @helper.inputText(moviesmodelForm("producer"), Symbol("_label") -> "Enter movie producer")
+        @helper.inputText(moviesmodelForm("Director"), Symbol("_label") -> "Enter movie Director")
+        @helper.inputText(moviesmodelForm("date"), Symbol("_label") -> "Enter release date", Symbol("placeholder") -> "MM/DD/YYYY")
+
+        <input type="submit" value="SAVE" />
+    </fieldset>
+    }
+    </body>
+</html>

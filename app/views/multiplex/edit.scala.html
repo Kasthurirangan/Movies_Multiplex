@@ -1,0 +1,19 @@
+@(multiplexmodelsForm : Form[Multiplexmodels],id : Integer)(implicit request: Http.Request, messages: play.i18n.Messages)
+
+<html>
+<head>
+    <title> Edit Multiplex </title>
+</head>
+
+<body>
+<h1> Edit Multiplex </h1>
+@helper.form(action = routes.MultiplexController.update(id)){
+@helper.CSRF.formField
+@helper.inputText(multiplexmodelsForm("Multiplexname"))
+@helper.inputText(multiplexmodelsForm("address"))
+@helper.inputText(multiplexmodelsForm("num_of_screens"))
+
+<input type="Submit" value="Edit book">
+}
+</body>
+</html>

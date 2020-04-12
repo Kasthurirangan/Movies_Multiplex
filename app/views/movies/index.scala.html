@@ -1,0 +1,35 @@
+@(moviesmodelList : List[Moviesmodels])
+
+<html>
+    <head>
+        <title> Movie info </title>
+    </head>
+
+    <body>
+        <h4><a href="@routes.MoviesController.create()">Add New Movies</a></h4>
+
+        <h2>Movies in Catalogue</h2>
+    <table width="100%" border="1">
+        <thead>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>CATEGORY</th>
+        <th>PRODUCER</th>
+        <th>DIRECTOR</th>
+        <th>DATE</th>
+        </thead>
+        <tbody>
+        @for(movie <- moviesmodelList) {
+            <tr>
+                <td>@movie.id</td>
+                <td><a href = @routes.MoviesController.show(movie.id)>@movie.name</a></td>
+                <td>@movie.category</td>
+                <td>@movie.producer</td>
+                <td>@movie.Director</td>
+                <td>@movie.date</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    </body>
+</html>

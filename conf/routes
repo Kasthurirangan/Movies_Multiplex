@@ -1,0 +1,32 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+# Movie Crud operation
+
+GET     /movies                     controllers.MoviesController.index
+GET     /movies/create              controllers.MoviesController.create(request : Request)
+GET     /movies/show/:id            controllers.MoviesController.show(id :Integer, request : Request)
+GET     /movies/edit/:id            controllers.MoviesController.edit(id : Integer, request : Request)
+GET     /movies/delete/:id          controllers.MoviesController.delete(id : Integer, request: Request)
+POST    /movies/create              controllers.MoviesController.save(request : Request)
+POST    /movies/edit                controllers.MoviesController.update(id : Integer, request : Request)
+
+# Multiplex Crud operation
+
+GET     /multiplex                  controllers.MultiplexController.index
+GET     /multiplex/create           controllers.MultiplexController.create(request : Request)
+GET     /multiplex/alot_movie       controllers.MultiplexController.index_allocation
+GET     /multiplex/alot_movie/:multiplex_id/:name/:id   controllers.MultiplexController.alotmovie(multiplex_id: Integer, name : String, id : Integer, request : Request)
+GET     /multiplex/show/:id         controllers.MultiplexController.show(id : Integer, requesy : Request)
+GET     /multiplex/edit/:id         controllers.MultiplexController.edit(id : Integer, request: Request)
+GET     /multiplex/delete/:id       controllers.MultiplexController.delete(id : Integer, request : Request)
+POST    /multiplex/create           controllers.MultiplexController.save(request: Request)
+POST    /multiplex/edit             controllers.MultiplexController.update(id: Integer, request : Request)
+GET    /multiplex/alot_movie/:multiplex_id/:id/:movie_id/:timing    controllers.MultiplexController.allocate_success_or_not(multiplex_id : Integer, id : Integer, movie_id : Integer, timing : String, request : Request)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

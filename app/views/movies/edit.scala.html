@@ -1,0 +1,21 @@
+@(moviesmodelsForm : Form[Moviesmodels],id : Integer)(implicit request: Http.Request, messages: play.i18n.Messages)
+
+<html>
+<head>
+    <title> Edit Movie </title>
+</head>
+
+<body>
+    <h1> Edit Movie </h1>
+        @helper.form(action = routes.MoviesController.update(id)){
+        @helper.CSRF.formField
+        @helper.inputText(moviesmodelsForm("name"))
+        @helper.inputText(moviesmodelsForm("category"))
+        @helper.inputText(moviesmodelsForm("producer"))
+        @helper.inputText(moviesmodelsForm("Director"))
+        @helper.inputText(moviesmodelsForm("date"))
+
+        <input type="Submit" value="Edit book">
+        }
+</body>
+</html>

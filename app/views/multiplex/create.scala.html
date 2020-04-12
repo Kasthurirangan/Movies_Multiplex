@@ -1,0 +1,24 @@
+@(multiplexmodelsForm : Form[Multiplexmodels])(implicit request: Http.Request, messages: play.i18n.Messages)
+@import helper._
+
+<html>
+<head>
+    <title> Multiplex Info  </title>
+</head>
+
+<body>
+
+@helper.form(action = routes.MultiplexController.save()) {
+
+<fieldset>
+    <legend>Multiplex</legend>
+    @helper.CSRF.formField
+    @helper.inputText(multiplexmodelsForm("Multiplexname"), Symbol("_label") -> "Enter Multiplex Name", Symbol("placeholder") -> "Enter multiplex name")
+    @helper.inputText(multiplexmodelsForm("address"), Symbol("_label") -> "Enter Address of multiplex")
+    @helper.inputText(multiplexmodelsForm("num_of_screens"), Symbol("_label") -> "Enter number of screens in this multiplex")
+
+    <input type="submit" value="SAVE" />
+</fieldset>
+}
+</body>
+</html>
