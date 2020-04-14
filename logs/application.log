@@ -1,0 +1,33 @@
+2020-04-12 23:11:59 [34mINFO [0;39m [36mplay.api.db.DefaultDBApi[0;39m [35m[0;39m Database [default] initialized at jdbc:h2:mem:play;DB_CLOSE_DELAY=-1
+2020-04-12 23:11:59 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m Creating Pool for datasource 'default'
+2020-04-12 23:12:00 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m datasource [default] bound to JNDI as DefaultDS
+2020-04-12 23:12:03 [34mINFO [0;39m [36mplay.api.http.EnabledFilters[0;39m [35m[0;39m Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2020-04-12 23:12:03 [34mINFO [0;39m [36mplay.api.Play[0;39m [35m[0;39m Application started (Dev) (no global state)
+2020-04-13 00:15:09 [34mINFO [0;39m [36mplay.core.server.AkkaHttpServer[0;39m [35m[0;39m Stopping server...
+2020-04-13 00:15:16 [31mWARN [0;39m [36makka.actor.CoordinatedShutdown[0;39m [35mCoordinatedShutdown(akka://play-dev-mode)[0;39m Task [shutdown-application-dev-mode] failed in phase [service-stop]: Compilation error[Cannot use a method returning javax.xml.transform.Result as a Handler for requests]
+2020-04-13 00:16:56 [34mINFO [0;39m [36mplay.api.db.DefaultDBApi[0;39m [35m[0;39m Database [default] initialized at jdbc:h2:mem:play;DB_CLOSE_DELAY=-1
+2020-04-13 00:16:56 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m Creating Pool for datasource 'default'
+2020-04-13 00:16:56 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m datasource [default] bound to JNDI as DefaultDS
+2020-04-13 00:16:58 [34mINFO [0;39m [36mplay.api.http.EnabledFilters[0;39m [35m[0;39m Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2020-04-13 00:16:58 [34mINFO [0;39m [36mplay.api.Play[0;39m [35m[0;39m Application started (Dev) (no global state)
+2020-04-13 00:23:11 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m Shutting down connection pool.
+2020-04-13 00:23:12 [34mINFO [0;39m [36mplay.api.db.DefaultDBApi[0;39m [35m[0;39m Database [default] initialized at jdbc:h2:mem:play;DB_CLOSE_DELAY=-1
+2020-04-13 00:23:12 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m Creating Pool for datasource 'default'
+2020-04-13 00:23:12 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m datasource [default] bound to JNDI as DefaultDS
+2020-04-13 00:23:12 [34mINFO [0;39m [36mplay.api.http.EnabledFilters[0;39m [35m[0;39m Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2020-04-13 00:23:12 [34mINFO [0;39m [36mplay.api.Play[0;39m [35m[0;39m Application started (Dev) (no global state)
