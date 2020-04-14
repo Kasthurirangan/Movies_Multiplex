@@ -1,6 +1,7 @@
 package repositiries;
 
 import entity.AlotMovieentity;
+import entity.Movieentity;
 import entity.Multiplexentity;
 import play.db.jpa.JPAApi;
 
@@ -81,5 +82,19 @@ public class AlotMoviesrepo {
                     ("Select alm from AlotMovieentity alm where aloted_or_not = :aloted_or_not", AlotMovieentity.class )
                     .setParameter("aloted_or_not", value).getResultList();
             return alotMovieentities;});
+    }
+
+    public Integer get_search_result(int movie_id) {
+        return this.wrap(entityManager ->
+                entityManager.createQuery("select alm.mutiplex_id from AlotMovieentity alm where alm.movie_id = :movie_id and alm.aloted_or_not = :aloted_or_not")
+                        .setParameter("movie_id", movie_id).setParameter("aloted_or_not", "yes")
+                        .getFirstResult());
+    }
+
+    public List<AlotMovieentity> get_screen_time_range(Integer movie_id) {
+         return this.wrap(entityManager ->
+            entityManager.createQuery("select alm.screen_no, alm.timerange from AlotMovieentity alm where alm.movie_id = :movie_id and alm.aloted_or_not = :aloted_or_not")
+            .setParameter("movie_id", movie_id).setParameter("aloted_or_not", "yes")
+                        .getResultList());
     }
 }

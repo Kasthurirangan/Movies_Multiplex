@@ -1,0 +1,140 @@
+@(url : String)
+
+<html>
+    <head>
+        <title> Search </title>
+    </head>
+
+    <body>
+    <div class="search">
+        <h2 style="margin-bottom: 20px">Search for Movie or Multiplex</h2>
+        <div class="col-sm-4 col-sm-offset-4" style="text-align: center;
+                margin: 0 auto">
+            <div class="input-group mb-3">
+                <input id="search" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button id="sendButton" class="btn btn-primary" type="button">Search</button>
+                </div>
+            </div>
+        </div>
+        <form>
+            <label class="radio-inline">
+                <input type="radio" name="rad" value="1" checked>Movie
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="rad" value="2">Multiplex
+            </label>
+        </form>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+                var webSocket;
+                var searchString;
+                var message;
+
+                function init() {
+                    initWebSocket();
+                }
+
+                function initWebSocket() {
+                    webSocket = new WebSocket("@url");
+                    webSocket.onopen = onOpen;
+                    webSocket.onclose = onClose;
+                    webSocket.onmessage = onMessage;
+                    webSocket.onerror = onError;
+                }
+
+                function onOpen(evt) {
+                    writeToScreen("CONNECTED");
+                }
+
+                function onClose(evt) {
+                    writeToScreen("DISCONNECTED");
+                    appendMessageToView(":", "DISCONNECTED");
+                }
+
+                function onError(evt) {
+                    writeToScreen("ERROR: " + evt.data);
+                    writeToScreen("ERROR: " + JSON.stringify(evt));
+                }
+
+                function onMessage(evt) {
+                    var receivedData = JSON.parse(evt.data);
+                    console.log("New Data: ", receivedData);
+                    listData(receivedData.body)
+                    /*appendMessageToView("Server", receivedData.body[0].movieName);*/
+                }
+
+                function appendMessageToView(title, message) {
+                    $("#messageContent").append("<p>" + title + ": " + message + "</p>");
+                }
+
+                function listData(data) {
+                    for (i in data) {
+                        if (message.movieOrMulti === "2") {
+                            $("#messageContent").append("<div class=\"card mb-3\"><div class=\"card-body\"><h5 class=\"card-title\">Name of the Multiplex : " + data[i].name + "</h5><p class=\"card-text\">Address : " + data[i].address + "</p><p class=\"card-text\">Number of Screens : " + data[i].numberOfScreens + "</p><p class=\"card-text\">Now Screening : " + sublist(data[i].screens) + "</p></div></div>");
+                        } else {
+                            $("#messageContent").append("<div class=\"card mb-3\"><div class=\"card-body\"><h5 class=\"card-title\">Movie Name : " + data[i].name + "</h5><p class=\"card-text\">Directed By : " + data[i].director + "</p><p class=\"card-text\">Release Date : " + data[i].releaseDate + "</p>" + sublist(data[i].screens) + "</div></div>");
+                        }
+
+                    }
+                }
+
+                function sublist(screenModel) {
+                    /*var screen="";
+                    for (i in screenModel){
+                        console.log(screenModel[i].movie);
+                        screen=screen+"Screen Number -> "+screenModel[i].screenNumber+" Movie -> "+screenModel[i].movie.movieName+",";
+                    }*/
+                    return "";
+                }
+
+                function writeToScreen(message) {
+                    console.log("New message: ", message);
+                }
+
+                function doSend(protocolMessage) {
+                    if (webSocket.readyState === WebSocket.OPEN) {
+                        writeToScreen("SENT: " + protocolMessage.message);
+                        webSocket.send(JSON.stringify(protocolMessage));
+                    } else {
+                        writeToScreen("Could not send data. Websocket is not open.");
+                    }
+                }
+
+                window.addEventListener("load", init, false);
+
+
+                $("#sendButton").click(function () {
+                    console.log("Submitting.");
+                    newMessage();
+                });
+
+                $(window).on("keydown", function (e) {
+                    if (e.which === 13) {
+                        console.log("Enter pressed.");
+                        newMessage();
+                        return false;
+                    }
+                });
+
+                function newMessage() {
+                    searchString = $("#search").val();
+                    document.getElementById("search").value = "";
+                    if ($.trim(searchString) === "") {
+                        return false;
+                    }
+
+                    appendMessageToView("Search Result for ", searchString);
+
+                    message = {
+                        searchString: searchString,
+                        movieOrMulti: $("input[name='rad']:checked").val()
+                    };
+                    console.log(message)
+
+                    doSend(message);
+                }
+        </script>
+    </body>
+</html>

@@ -2,6 +2,8 @@ package repositiries;
 
 import entity.Movieentity;
 import entity.Multiplexentity;
+import models.SearchMovieResult;
+import models.SearchMultiplexResult;
 import play.db.jpa.JPAApi;
 
 import javax.inject.Inject;
@@ -49,5 +51,20 @@ public class Multiplexrepo {
         return this.wrap(entityManager ->
         {entityManager.remove(entityManager.contains(multiplexentity) ? multiplexentity : entityManager.merge(multiplexentity));
             return multiplexentity;});
+    }
+
+    public List<SearchMultiplexResult> get_search_result(String search_value) {
+        return  this.wrap(entityManager ->
+                entityManager.createQuery
+                        ("select mp, m.name, alm.screen_no, alm.timerange from Multiplexentity mp, AlotMovieentity alm, " +
+                                "movie m where m.id = alm.movie_id and alm.mutiplex_id = mp.multiplex_id and " +
+                                "lower(mp.Multiplexname) = lower(:search_value)")
+                        .setParameter("search_value", search_value).getResultList());
+    }
+
+    public List<SearchMultiplexResult> get_search_multiplex_only_result(String search_value) {
+        return this.wrap(entityManager ->
+                entityManager.createQuery("select mp from Multiplexentity mp where mp.Multiplexname= :search_value")
+                        .setParameter("search_value", search_value).getResultList());
     }
 }

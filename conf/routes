@@ -28,5 +28,10 @@ POST    /multiplex/create           controllers.MultiplexController.save(request
 POST    /multiplex/edit             controllers.MultiplexController.update(id: Integer, request : Request)
 GET    /multiplex/alot_movie/:multiplex_id/:id/:movie_id/:timing    controllers.MultiplexController.allocate_success_or_not(multiplex_id : Integer, id : Integer, movie_id : Integer, timing : String, request : Request)
 
+
+GET    /search                      controllers.SearchController.index(request : Request)
+GET    /search/socket               controllers.SearchController.socket
+GET    /api/search                  controllers.SearchRestController.search(search_value : String, multiplex_movie : Integer)
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

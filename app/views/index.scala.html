@@ -1,6 +1,13 @@
 @()
 
-@main("Welcome to Play") {
-  <h1>Welcome to Play!</h1>
+<html>
+    <head>
+      <title>  Welcome to movie management </title>
+    </head>
 
-}
+    <body>
+        <h4><a href="@routes.MoviesController.index()">Movie Info</a></h4>
+        <h4><a href="@routes.MultiplexController.index()">Multiplex Info</a></h4>
+        <h4><a href="@routes.SearchController.index()">Search management</a></h4>
+    </body>
+</html>
