@@ -4,14 +4,12 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.http.javadsl.Http;
-import akka.http.javadsl.*;
+import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.Materializer;
-import com.fasterxml.jackson.annotation.JacksonAnnotation;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector;
 import models.Collectivemodels;
 import models.Searchmodel;
 
@@ -68,7 +66,7 @@ public class SocketActor extends AbstractActor {
     }
 
     private CompletionStage<HttpResponse> calling_rest(String search_value, Integer multiplex_movie) {
-        return Http.get(getContext().getSystem()).singleRequest(HttpRequest.create("http://localhost:9000/api/search?search_value=" + search_value + "&multiplex_movie=" + multiplex_movie));
+        return Http.get(getContext().getSystem()).singleRequest(HttpRequest.create("http://localhost:9000/api/search?search_value=" +search_value +"&multiplex_movie=" +multiplex_movie));
     }
 
     @Override

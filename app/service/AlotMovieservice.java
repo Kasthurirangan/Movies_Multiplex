@@ -1,16 +1,16 @@
 package service;
 
 import entity.AlotMovieentity;
-import entity.Multiplexentity;
 import models.Alotmoviemodel;
-import models.Multiplexmodels;
 import repositiries.AlotMoviesrepo;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Singleton
 public class AlotMovieservice {
 
     @Inject

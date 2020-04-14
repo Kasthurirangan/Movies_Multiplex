@@ -1,20 +1,16 @@
 package service;
 
-import entity.AlotMovieentity;
-import entity.Movieentity;
-import entity.Multiplexentity;
 import models.SearchMovieResult;
 import models.SearchMultiplexResult;
-import play.mvc.Result;
-import repositiries.AlotMoviesrepo;
 import repositiries.Movierepo;
 import repositiries.Multiplexrepo;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CompletionStage;
 
+@Singleton
 public class Searchservice {
 
     @Inject
@@ -34,6 +30,7 @@ public class Searchservice {
         {
             searchMovieResultList =  this.movierepo.get_search_movie_only_result(search_value);
         }
+        System.out.println("the list value is " +searchMovieResultList);
         return searchMovieResultList;
     }
 

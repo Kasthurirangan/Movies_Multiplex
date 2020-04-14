@@ -12,7 +12,9 @@ public class SearchMovieResult {
     public String time_range;
     public int screen_no;
 
-    SearchMovieResult(int id, String name, String category, String producer, String Director, String date, String multiplex_name, String time_range, int screen_no)
+    public SearchMovieResult(){}
+
+    public SearchMovieResult(int id, String name, String category, String producer, String Director, String date, String multiplex_name, String time_range, int screen_no)
     {
         this.id = id;
         this.name = name;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="multiplex_-_movies_3397" />
+    <profile name="sbt 1" modules="movies_multiplex_2062" />
     <profile name="sbt 2" modules="Multiplex_&amp;_movies">
       <option name="deprecationWarnings" value="true" />
       <option name="uncheckedWarnings" value="true" />

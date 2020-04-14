@@ -1,16 +1,18 @@
 package repositiries;
 
 import entity.AlotMovieentity;
-import entity.Movieentity;
-import entity.Multiplexentity;
 import play.db.jpa.JPAApi;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.function.Function;
 
+@Singleton
+@Transactional
 public class AlotMoviesrepo {
 
     @Inject

@@ -66,7 +66,7 @@ public class SearchMultiplexResult {
         this.timerange = timerange;
     }
 
-    SearchMultiplexResult(int multiplex_id, String Multiplexname, String address, int num_of_screens, String name, int screen_no, String timerange)
+    public SearchMultiplexResult(int multiplex_id, String Multiplexname, String address, int num_of_screens, String name, int screen_no, String timerange)
     {
         this.multiplex_id = multiplex_id;
         this.Multiplexname = Multiplexname;
@@ -77,5 +77,6 @@ public class SearchMultiplexResult {
         this.timerange = timerange;
     }
 
+    public SearchMultiplexResult() {}
 
 }

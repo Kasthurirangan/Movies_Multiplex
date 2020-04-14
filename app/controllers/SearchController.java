@@ -45,6 +45,7 @@ public class SearchController {
     public Result index(Http.Request request)
     {
         String url = routes.SearchController.socket().webSocketURL(request);
+        System.out.println("url is" + url);
         return ok(views.html.search.startsearch.render(url));
     }
 }

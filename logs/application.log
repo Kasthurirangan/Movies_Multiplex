@@ -1,33 +1,46 @@
-2020-04-12 23:11:59 [34mINFO [0;39m [36mplay.api.db.DefaultDBApi[0;39m [35m[0;39m Database [default] initialized at jdbc:h2:mem:play;DB_CLOSE_DELAY=-1
-2020-04-12 23:11:59 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m Creating Pool for datasource 'default'
-2020-04-12 23:12:00 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m datasource [default] bound to JNDI as DefaultDS
-2020-04-12 23:12:03 [34mINFO [0;39m [36mplay.api.http.EnabledFilters[0;39m [35m[0;39m Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-04-15 01:54:16 [34mINFO [0;39m [36mplay.api.db.DefaultDBApi[0;39m [35m[0;39m Database [default] initialized at jdbc:h2:mem:play;DB_CLOSE_DELAY=-1
+2020-04-15 01:54:16 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m Creating Pool for datasource 'default'
+2020-04-15 01:54:16 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m datasource [default] bound to JNDI as DefaultDS
+2020-04-15 01:54:18 [34mINFO [0;39m [36mplay.api.http.EnabledFilters[0;39m [35m[0;39m Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-04-12 23:12:03 [34mINFO [0;39m [36mplay.api.Play[0;39m [35m[0;39m Application started (Dev) (no global state)
-2020-04-13 00:15:09 [34mINFO [0;39m [36mplay.core.server.AkkaHttpServer[0;39m [35m[0;39m Stopping server...
-2020-04-13 00:15:16 [31mWARN [0;39m [36makka.actor.CoordinatedShutdown[0;39m [35mCoordinatedShutdown(akka://play-dev-mode)[0;39m Task [shutdown-application-dev-mode] failed in phase [service-stop]: Compilation error[Cannot use a method returning javax.xml.transform.Result as a Handler for requests]
-2020-04-13 00:16:56 [34mINFO [0;39m [36mplay.api.db.DefaultDBApi[0;39m [35m[0;39m Database [default] initialized at jdbc:h2:mem:play;DB_CLOSE_DELAY=-1
-2020-04-13 00:16:56 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m Creating Pool for datasource 'default'
-2020-04-13 00:16:56 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m datasource [default] bound to JNDI as DefaultDS
-2020-04-13 00:16:58 [34mINFO [0;39m [36mplay.api.http.EnabledFilters[0;39m [35m[0;39m Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-04-13 00:16:58 [34mINFO [0;39m [36mplay.api.Play[0;39m [35m[0;39m Application started (Dev) (no global state)
-2020-04-13 00:23:11 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m Shutting down connection pool.
-2020-04-13 00:23:12 [34mINFO [0;39m [36mplay.api.db.DefaultDBApi[0;39m [35m[0;39m Database [default] initialized at jdbc:h2:mem:play;DB_CLOSE_DELAY=-1
-2020-04-13 00:23:12 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m Creating Pool for datasource 'default'
-2020-04-13 00:23:12 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m datasource [default] bound to JNDI as DefaultDS
-2020-04-13 00:23:12 [34mINFO [0;39m [36mplay.api.http.EnabledFilters[0;39m [35m[0;39m Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-04-13 00:23:12 [34mINFO [0;39m [36mplay.api.Play[0;39m [35m[0;39m Application started (Dev) (no global state)
+2020-04-15 01:54:18 [34mINFO [0;39m [36mplay.api.Play[0;39m [35m[0;39m Application started (Dev) (no global state)
+2020-04-15 01:54:25 [1;31mERROR[0;39m [36makka.actor.OneForOneStrategy[0;39m [35makka://application/user/$a/flowActor[0;39m Illegal URI reference: Invalid input ' ', expected raw-query-char, '#' or 'EOI' (line 1, column 51): http://localhost:9000/api/search?search_value=iron man&multiplex_movie=1
+                                                  ^
+akka.http.scaladsl.model.IllegalUriException: Illegal URI reference: Invalid input ' ', expected raw-query-char, '#' or 'EOI' (line 1, column 51): http://localhost:9000/api/search?search_value=iron man&multiplex_movie=1
+                                                  ^
+	at akka.http.scaladsl.model.IllegalUriException$.apply(ErrorInfo.scala:74)
+	at akka.http.scaladsl.model.Uri$.fail(Uri.scala:831)
+	at akka.http.impl.model.parser.UriParser.fail(UriParser.scala:81)
+	at akka.http.impl.model.parser.UriParser.parseUriReference(UriParser.scala:46)
+	at akka.http.scaladsl.model.Uri$.apply(Uri.scala:216)
+	at akka.http.scaladsl.model.Uri$.apply(Uri.scala:188)
+	at akka.http.impl.util.JavaAccessors$.HttpRequest(JavaAccessors.scala:26)
+	at akka.http.impl.util.JavaAccessors.HttpRequest(JavaAccessors.scala)
+	at akka.http.javadsl.model.HttpRequest.create(HttpRequest.java:64)
+	at Actor.SocketActor.calling_rest(SocketActor.java:69)
+	at Actor.SocketActor.processMessage(SocketActor.java:36)
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:24)
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:20)
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:187)
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:186)
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:20)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:241)
+	at akka.actor.Actor.aroundReceive(Actor.scala:533)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:531)
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:220)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+2020-04-15 01:59:10 [34mINFO [0;39m [36mplay.core.server.AkkaHttpServer[0;39m [35m[0;39m Stopping server...
+2020-04-15 01:59:10 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m Shutting down connection pool.

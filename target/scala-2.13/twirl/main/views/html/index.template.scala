@@ -29,8 +29,7 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
       {
 
 
-Seq[Any](format.raw/*1.4*/("""
-
+Seq[Any](format.raw/*2.1*/("""
 """),format.raw/*3.1*/("""<html>
     <head>
       <title>  Welcome to movie management </title>
@@ -57,11 +56,11 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-04-15T00:29:00.697
-                  SOURCE: C:/Users/javasbt07/Downloads/multiplex_&_movies/app/views/index.scala.html
-                  HASH: 2fb78862e5d327921137671d369424739d25b981
-                  MATRIX: 901->1|997->3|1027->7|1175->129|1189->135|1234->160|1306->205|1321->211|1370->239|1446->288|1461->294|1507->319
-                  LINES: 27->1|32->1|34->3|40->9|40->9|40->9|41->10|41->10|41->10|42->11|42->11|42->11
+                  DATE: 2020-04-15T01:03:16.762344
+                  SOURCE: /home/ramesh/Documents/Movies_Multiplex/app/views/index.scala.html
+                  HASH: 03c1c56fb1db56aa9dd612e228c9345a49ee6680
+                  MATRIX: 901->1|997->4|1024->5|1166->121|1180->127|1225->152|1296->196|1311->202|1360->230|1435->278|1450->284|1496->309
+                  LINES: 27->1|32->2|33->3|39->9|39->9|39->9|40->10|40->10|40->10|41->11|41->11|41->11
                   -- GENERATED --
               */
           

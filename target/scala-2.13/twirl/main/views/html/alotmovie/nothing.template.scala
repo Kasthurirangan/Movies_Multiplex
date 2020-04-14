@@ -29,8 +29,7 @@ object nothing extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Ht
       {
 
 
-Seq[Any](format.raw/*1.4*/("""
-
+Seq[Any](format.raw/*2.1*/("""
 """),format.raw/*3.1*/("""<html>
     <head>
         <title> Some movie is allocated</title>
@@ -55,11 +54,11 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-04-15T00:29:00.671
-                  SOURCE: C:/Users/javasbt07/Downloads/multiplex_&_movies/app/views/alotmovie/nothing.scala.html
-                  HASH: dc492fb0d4af92f75a37538a575dda2a7cc30495
-                  MATRIX: 913->1|1009->3|1039->7
-                  LINES: 27->1|32->1|34->3
+                  DATE: 2020-04-15T01:03:16.929297
+                  SOURCE: /home/ramesh/Documents/Movies_Multiplex/app/views/alotmovie/nothing.scala.html
+                  HASH: 4087c3a3e09460dbd1a0c1f849317d76cfb076e8
+                  MATRIX: 913->1|1009->4|1036->5
+                  LINES: 27->1|32->2|33->3
                   -- GENERATED --
               */
           

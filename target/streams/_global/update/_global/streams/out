@@ -1,33 +1,4 @@
-[debug] "not up to date. inChanged = true, force = false
-[debug] Updating ...
-[debug] Done updating 
-[warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
-[error] Modules were resolved with conflicting cross-version suffixes in ProjectRef(uri("file:/C:/Users/javasbt07/Downloads/multiplex_&_movies/"), "root"):
-[error]    com.typesafe.akka:akka-http-core _2.13, _2.12
-[error]    com.typesafe.akka:akka-parsing _2.12, _2.13
-[error]    com.typesafe.akka:akka-actor _2.12, _2.13
-[error]    com.typesafe.akka:akka-stream _2.13, _2.12
-[error]    org.scala-lang.modules:scala-java8-compat _2.13, _2.12
-[error]    org.scala-lang.modules:scala-parser-combinators _2.12, _2.13
-[error]    com.typesafe:ssl-config-core _2.12, _2.13
-[error] java.lang.RuntimeException: Conflicting cross-version suffixes in: com.typesafe.akka:akka-http-core, com.typesafe.akka:akka-parsing, com.typesafe.akka:akka-actor, com.typesafe.akka:akka-stream, org.scala-lang.modules:scala-java8-compat, org.scala-lang.modules:scala-parser-combinators, com.typesafe:ssl-config-core
-[error] 	at scala.sys.package$.error(package.scala:30)
-[error] 	at sbt.librarymanagement.ConflictWarning$.processCrossVersioned(ConflictWarning.scala:39)
-[error] 	at sbt.librarymanagement.ConflictWarning$.apply(ConflictWarning.scala:19)
-[error] 	at sbt.Classpaths$.$anonfun$ivyBaseSettings$70(Defaults.scala:2479)
-[error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
-[error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:62)
-[error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:67)
-[error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:281)
-[error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:19)
-[error] 	at sbt.Execute.work(Execute.scala:290)
-[error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:281)
-[error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:178)
-[error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:37)
-[error] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-[error] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-[error] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-[error] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-[error] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-[error] 	at java.lang.Thread.run(Thread.java:748)
-[error] (update) Conflicting cross-version suffixes in: com.typesafe.akka:akka-http-core, com.typesafe.akka:akka-parsing, com.typesafe.akka:akka-actor, com.typesafe.akka:akka-stream, org.scala-lang.modules:scala-java8-compat, org.scala-lang.modules:scala-parser-combinators, com.typesafe:ssl-config-core
+[0m[[0m[0mdebug[0m] [0m[0m"not up to date. inChanged = true, force = false[0m
+[0m[[0m[0mdebug[0m] [0m[0mUpdating ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone updating [0m
+[0m[[0m[33mwarn[0m] [0m[0mThere may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.[0m
